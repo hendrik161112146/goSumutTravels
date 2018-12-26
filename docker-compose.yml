@@ -1,0 +1,39 @@
+version: '2'
+services:
+  web:
+    container_name: ${APP_NAME_WEB}
+    build:
+      context: ./
+      dockerfile: web.rundoc
+    volumes:
+      - ./:/var/www
+    ports:
+      - "7100:80"
+    links:
+      - app
+
+  app:
+    container_name: ${APP_NAME}
+    build:
+      context: ./
+      dockerfile: app.rundoc
+    volumes:
+      - ./:/var/www
+    links:
+      - database
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=database"
+
+  database:
+    container_name: ${DB_DATABASE}
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_GoSumutTravel
+    ports:
+      - "3406:3306"
+
+
+volumes:
+  dbdata:
