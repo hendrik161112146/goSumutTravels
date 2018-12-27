@@ -25,6 +25,9 @@ Route::get('/admin_dashboard', function (){
 
 Route::get('/add_object_tourist', 'ObjectTouristController@index')->name('add_object_tourist');
 Route::post('/add_object_tourist', 'ObjectTouristController@addTouristObject')->name('add_object_tourist');
+Route::get('/edit_object_tourist/{id}', 'ObjectTouristController@editTouristObject')->name('edit_object_tourist');
+Route::post('/edit_object_tourist/{id}', 'ObjectTouristController@editTouristObject')->name('edit_object_tourist');
+Route::get('/delete_object_tourist/{id}', 'ObjectTouristController@deleteTouristObject')->name('delete_object_tourist');
 /*Package tourist*/
 
 Route::get('/add_package', function (){
@@ -44,6 +47,3 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -14,10 +14,10 @@ class CreateObjectTouristsTable extends Migration
     public function up()
     {
         Schema::create('object_tourists', function (Blueprint $table) {
-            $table->increments('object_id');
-            $table->mediumText('object_title');
-            $table->longText('object_description');
-            $table->integer('object_');
+            $table->increments('id');
+            $table->mediumText('object_title')->nullable();
+            $table->mediumText('category_id')->nullable();
+            $table->longText('object_description')->nullable();
             $table->timestamps();
         });
     }
