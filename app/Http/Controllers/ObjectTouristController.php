@@ -13,29 +13,46 @@ class ObjectTouristController extends Controller
     //
 
     public function index (Request $request){
-        return view('admin.object_tourist_form');
+        $list['list'] = TouristObject::with(['gallery','category'])->get()->toArray();
+        foreach ($list['list'] as $keys =>  $rows){
+            foreach ($rows['gallery'] as $row){
+                $list['list'][$keys]['image_link'] =  Cloudder::secureShow($row['image_path'],["width" => 150, "height" => 100]);
+            }
+            $list['list'][$keys]['category'] = $rows['category']['category'];
+        }
+        return view('admin.object_tourist_list',$list);
     }
 
     public function addTouristObject(Request $request){
-
-
-        $id = TouristObject::create($request->toArray())->id;
-        foreach ($request->file('images') as $image){
-           $namefile = 'object_tourist/'.$request['category_id'].'/'.time().'_'.$id.'.'.$image->getClientOriginalExtension();
-           GalleryImage::create(['image_path' => $namefile,'object_id' => $id]);
-           Cloudder::upload($image,$namefile);
+        if($request->method() == 'GET') {
+            return view('admin.object_tourist_form');
+        }else{
+            $id = TouristObject::create($request->toArray())->id;
+            return redirect()->route('add_upload_image_tourist',['id' => $id,'status' => 'object']);
         }
-
-        return redirect()->route('home');
     }
 
     public function editTouristObject(Request $request,$id){
 
-        $object['data'] = TouristObject::find($id);
-        $object['data']['gallery'] = $object['data']->gallery->toArray();
-        $object['data']['category'] = $object['data']->category->toArray();
-        $object['data'] = $object['data']->toArray();
-        return view('admin.object_tourist_form',$object);
+
+        if($request->method() == 'GET'){
+            $object['data'] = TouristObject::find($id);
+            $object['data']['gallery'] = $object['data']->gallery->toArray();
+            foreach ($object['data']['gallery'] as $img){
+                $image = Cloudder::show($img['image_path'], []);
+                $object['data']['images'] = [Cloudder::secureShow($image, [])];
+            }
+            $object['data']['category'] = $object['data']->category->toArray();
+            $object['data'] = $object['data']->toArray();
+            $object['id'] = $id;
+
+
+            return view('admin.object_tourist_form',$object);
+        }else{
+            $data = TouristObject::find($id)->update($request->toArray());
+            return redirect()->back();
+        }
+
     }
 
     public function deleteTouristObject(Request $request,$id)
@@ -48,7 +65,9 @@ class ObjectTouristController extends Controller
         $object->gallery()->delete();
         $object->delete();
         return redirect()->back();
-
-
     }
+
+
+
+
 }

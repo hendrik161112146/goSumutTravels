@@ -17,6 +17,7 @@ class CreateGalleryImagesTable extends Migration
             $table->increments('id');
             $table->string('image_path')->nullable();
             $table->integer('object_id')->nullable();
+            $table->integer('hotel_id')->nullable();
             $table->timestamps();
         });
     }

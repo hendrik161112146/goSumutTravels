@@ -13,7 +13,7 @@ class TouristObject extends Model
 
     public function gallery()
     {
-        return $this->hasMany('App\GalleryImage','id');
+        return $this->hasMany('App\GalleryImage','object_id');
     }
 
     public function category()
