@@ -9,7 +9,7 @@
                 </h1>
                 <h3 style="color: white;"> is your place of information to explore North Sumatra</h3>
                 <p>explore the natural beauty of North Sumatra, tranquility is what we offer you.</p>
-                <a href="{{route('homelist')}}" class="primary-btn">See Details<span class="lnr lnr-arrow-right"></span></a>
+                <a href="{{route('object_spec',['category' => 1])}}" class="primary-btn">See Details<span class="lnr lnr-arrow-right"></span></a>
             </div>
         </div>
     </div>

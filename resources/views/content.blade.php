@@ -1,5 +1,9 @@
 @extends('websites.layouts.app')
 
 @section('content')
-    {{--<p>this the one that I'm trying to yield on the welcome.blade.php</p>--}}
+    @include('websites.sublayouts.banners')
+    @include('websites.sublayouts.populars')
+    @include('websites.sublayouts.gallerys')
+    @include('websites.sublayouts.list_hotel')
+    @include('websites.sublayouts.about')
 @endsection

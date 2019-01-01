@@ -12,7 +12,14 @@
 */
 
 Route::get('/', 'HomepageController@index')->name('homepage');
-Route::get('/homelist', 'HomepageController@HomeList')->name('homelist');
+Route::get('/object_spec/{category}', 'HomepageController@ObjectSpec')->name('object_spec');
+Route::get('/object_detail/{id}', 'HomepageController@ObjectDetail')->name('object_detail');
+
+
+
+/*gallery*/
+Route::get('/gallery_list', 'GalleryController@GalleryList')->name('gallery_list');
+
 
 
 /*dashboard Admin*/
@@ -48,16 +55,23 @@ Route::post('/addhotel', 'HotelController@AddHotels')->name('addhotels');
 Route::get('/edithotel/{id}', 'HotelController@Edithotel')->name('edithotels');
 Route::post('/edithotel/{id}', 'HotelController@Edithotel')->name('edithotels');
 Route::get('/deletehotel/{id}', 'HotelController@Deletehotel')->name('deletehotels');
-
-
+Route::get('/hotel_detail/{id}', 'HotelController@HotelDetail')->name('hotel_detail');
+Route::get('/hotel_list', 'HotelController@HotelListWeb')->name('hotel_list');
 
 
 
 /*List Booking*/
 
+
+
 Route::get('/list_booking', function (){
     dd('list_booking');
 })->name('list_booking');
+
+Route::post('/post_booking', 'BookingController@postBooking')->name('post_booking');
+
+
+
 
 Auth::routes();
 

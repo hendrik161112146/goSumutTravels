@@ -17,6 +17,8 @@ class CreateObjectTouristsTable extends Migration
             $table->increments('id');
             $table->mediumText('object_title')->nullable();
             $table->mediumText('category_id')->nullable();
+            $table->string('meta_description')->nullable();
+            $table->integer('object_view')->nullable();
             $table->longText('object_description')->nullable();
             $table->timestamps();
         });

@@ -9,7 +9,7 @@ class TouristObject extends Model
     //
     protected $table = 'object_tourists';
     protected $primaryKey = 'id';
-    protected $fillable = ['object_description','object_title','object_view','category_id'];
+    protected $fillable = ['object_description','object_title','object_view','category_id','meta_description'];
 
     public function gallery()
     {

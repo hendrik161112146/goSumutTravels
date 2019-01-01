@@ -23,6 +23,7 @@ class CreateHotelTables extends Migration
             $table->longText('facilities')->nullable();
             $table->integer('rating')->nullable();
             $table->float('price')->nullable();
+            $table->string('meta_description')->nullable();
             $table->integer('room')->nullable();
             $table->timestamps();
         });

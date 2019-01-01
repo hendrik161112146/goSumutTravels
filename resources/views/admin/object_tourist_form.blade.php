@@ -4,9 +4,15 @@
     <div class="container">
 
         <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" href="{{route('add_object_tourist')}}">Tourist Object</a>
-            </li>
+            @if(@$id)
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('edit_object_tourist',['id' => $id,'status' => 'object'])}}">Tourist Object</a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('add_object_tourist')}}">Tourist Object</a>
+                </li>
+            @endif
             @if(@$id)
                 <li class="nav-item">
                     <a class="nav-link " href="{{route('add_upload_image_tourist',['id' => $id,'status' => 'object'])}}">Upload Image</a>
@@ -56,8 +62,12 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea  class="form-control" id="summary-ckeditor" name="object_description" rows="3">{{@$data['object_description']}}</textarea>
+                <label for="exampleFormControlTextarea1">Meta Description</label>
+                <textarea  class="form-control" id="summary-ckeditor1" name="meta_description" rows="3">{{@$data['meta_description']}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Content Text</label>
+                <textarea  class="form-control" id="summary-ckeditor2" name="object_description" rows="3">{{@$data['object_description']}}</textarea>
             </div>
 
             <button type="submit">Sumbit</button>
@@ -70,7 +80,8 @@
     <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
     <script>
 
-        CKEDITOR.replace( 'summary-ckeditor' );
+        CKEDITOR.replace( 'summary-ckeditor1' );
+        CKEDITOR.replace( 'summary-ckeditor2' );
         /*   function preview_images()
                 {
                     var total_file=document.getElementById("images").files.length;

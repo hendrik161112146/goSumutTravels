@@ -4,9 +4,15 @@
     <div class="container">
 
         <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" href="{{route('add_object_tourist')}}">Hotel & Resort</a>
-            </li>
+            @if(@$id)
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('edithotels',['id' => $id,'status' => 'hotel'])}}">Hotel & Resort</a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('addhotels')}}">Hotel & Resort</a>
+                </li>
+            @endif
             @if(@$id)
                 <li class="nav-item">
                     <a class="nav-link " href="{{route('add_upload_image_tourist',['id' => $id,'status' => 'hotel'])}}">Upload Image</a>
@@ -60,6 +66,11 @@
             </div>
 
             <div class="form-group">
+                <label for="exampleFormControlTextarea1">Meta Description</label>
+                <textarea  class="form-control" id="summary-ckeditor1" name="meta_description" rows="3">{{@$hotel['meta_description']}}</textarea>
+            </div>
+
+            <div class="form-group">
                 <label for="exampleFormControlInput1">Room</label>
                 <input name="room" value="{{@$hotel['room'] ?$hotel['room']:'' }}" type="number" class="form-control"  placeholder="Jumlah Ruang ...">
             </div>
@@ -81,4 +92,10 @@
         </form>
     </div>
 
+    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+    <script>
+
+        CKEDITOR.replace( 'summary-ckeditor1' );
+
+    </script>
 @endsection

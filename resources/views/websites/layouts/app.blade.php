@@ -19,7 +19,8 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
     CSS
-    ============================================= -->
+    ====
+    ========================================= -->
     <link rel="stylesheet" href="{{asset('cssc/linearicons.css')}}">
     <link rel="stylesheet" href="{{asset('cssc/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('cssc/font-awesome.min.css')}}">
@@ -30,23 +31,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 
+   {{-- <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>--}}
+   {{-- <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>--}}
+
+
 
 </head>
 <body>
 
 @include('websites.layouts.headers')
-@include('websites.sublayouts.banners')
 @yield('content')
-@include('websites.sublayouts.populars')
-@include('websites.sublayouts.gallerys')
-@include('websites.sublayouts.about')
 @include('websites.layouts.footers')
 
-{{--@include('sublayouts.bookings')--}}
-{{--@include('sublayouts.gallerys')--}}
-{{--@include('blogs')--}}
-{{--@include('sublayouts.contactarea')--}}
-{{--@include('sublayouts.contacts')--}}
 
 
 <script src="{{asset('js/vendor/jquery-2.2.4.min.js')}}"></script>

@@ -15,149 +15,27 @@
 
         <div id="gallery" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p1.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p2.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
+                <!--First slide-->
+                @foreach($gallery as $keys => $rows)
+                    <div class="carousel-item {{$keys == 0 ? "active" : ''}}">
+                        <div class="row m-5">
+                            @foreach($rows as $key =>  $row)
+                                <div class="col-lg-2 col-sm-6 single-packages no-padding">
+                                    <div class="content">
+                                        <a href="{{route('object_detail',['id' => $row['object_id']])}}" >
+                                            <div class="content-overlay"></div>
+                                            <img style="min-height: 150px;" class="content-image img-fluid d-block mx-auto" src="{{$row['image_path']}}" alt="">
+                                            <div class="content-details fadeIn-bottom">
+                                                <h3 class="content-title">Details...</h3>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>                </div>
-
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p3.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>                </div>
-
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p4.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>                </div>
-
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p5.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p5.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p1.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p2.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>                </div>
-
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p3.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>                </div>
-
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p4.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>                </div>
-
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p5.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-sm-6 single-packages no-padding">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                    <div class="content-overlay"></div>
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/p5.jpg" alt="">
-                                    <div class="content-details fadeIn-bottom">
-                                        <h3 class="content-title">Resort Holiday package</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <a class="carousel-control-prev" href="#gallery" role="button" data-slide="prev">
