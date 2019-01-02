@@ -25,7 +25,7 @@
                                          alt="Card image cap">
                                     <div class="card-body" style="min-height: 190px;">
                                         <h4 class="card-title">{{$row['object_title']}}</h4>
-                                        <p class="card-text">{{$row['meta_description']}}</p>
+                                        <p class="card-text">{!! $row['meta_description'] !!}</p>
                                         <a href="{{route('object_detail',['id' => $row['id']])}}" class="text-uppercase primary-btn2 primary-border circle">View Details</span></a>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                     <img class="card-img-top" style="min-height: 220px;" src="{{$row['image_link']}}"                                         alt="Card image cap">
                                     <div class="card-body" style="min-height: 190px;">
                                         <h4 class="card-title">{{$row['object_title']}}</h4>
-                                        <p class="card-text">{{$row['meta_description']}}</p>
+                                        <p class="card-text">{!! $row['meta_description']  !!}</p>
                                         <a href="{{route('object_detail',['id' => $row['id']])}}" class="text-uppercase primary-btn2 primary-border circle">View Details</span></a>
                                     </div>
                                 </div>

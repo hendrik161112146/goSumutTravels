@@ -70,16 +70,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('home') }}">
-                                        Dashboard
-                                    </a>
                                     <a class="dropdown-item" href="{{ route('object_tourist_list') }}">
                                         Object Tourist
                                     </a>
                                     <a class="dropdown-item" href="{{ route('hotels_list') }}">
                                         Hotel & Resort
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('list_booking') }}">
+                                    <a class="dropdown-item" href="{{ route('list_booking',['status' => 0]) }}">
                                         List Booking
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"

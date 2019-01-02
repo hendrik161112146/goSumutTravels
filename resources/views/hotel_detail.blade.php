@@ -14,7 +14,8 @@
                             <li>{!! \Illuminate\Support\Facades\Session::get('success') !!}</li>
                         </ul>
                     </div>
-                @elseif (\Illuminate\Support\Facades\Session::has('error'))
+                @endif
+                @if (\Illuminate\Support\Facades\Session::has('error'))
                     <div class="alert alert-error" style="margin-top: 20px;">
                         <ul>
                             <li>{!! \Illuminate\Support\Facades\Session::get('error') !!}</li>
@@ -116,7 +117,9 @@
                                         <div class="col-md-6">
                                             <input type="text" name="email" class="single-in form-control" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'email'">
                                         </div>
-
+                                        <div class="col-md-6">
+                                            <input type="text" name="name_tenant" class="single-in form-control" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'">
+                                        </div>
 
                                         <div class="col-lg-12 d-flex justify-content-end">
                                             <button type="submit" class="primary-btn mt-20">Send Message<span class="lnr lnr-arrow-right"></span></button>

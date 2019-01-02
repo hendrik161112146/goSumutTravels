@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Booking;
 use App\Category;
 use App\GalleryImage;
 use App\TouristObject;
@@ -30,4 +31,5 @@ class HomeController extends Controller
         initialDb();
         return view('home');
     }
+
 }

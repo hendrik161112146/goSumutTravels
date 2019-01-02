@@ -18,12 +18,14 @@ class CretaeBookingTable extends Migration
             $table->increments('id');
             $table->string('from')->nullable();
             $table->string('to')->nullable();
+            $table->string('name_tenant')->nullable();
             $table->date('start_date')->nullable();
             $table->date('return_date')->nullable();
             $table->integer('adult')->nullable();
             $table->integer('child')->nullable();
             $table->string('email')->nullable();
             $table->integer('hotel_id')->nullable();
+            $table->integer('status')->default(0);
             $table->integer('room_need')->nullable();
             $table->timestamps();
         });

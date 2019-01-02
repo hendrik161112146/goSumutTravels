@@ -9,7 +9,7 @@ class Booking extends Model
     //
     protected $table = 'booking';
     protected $primaryKey = 'id';
-    protected $fillable = ['from','to','start_date','return_date','adult','child','email','room_need','hotel_id'];
+    protected $fillable = ['from','to','start_date','return_date','adult','child','email','room_need','hotel_id','status','name_tenant'];
 
     public function hotel()
     {

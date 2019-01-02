@@ -62,21 +62,17 @@ Route::get('/hotel_list', 'HotelController@HotelListWeb')->name('hotel_list');
 
 /*List Booking*/
 
+Route::get('/testing_email',function (){
+    return view('admin.email_templat');
+});
 
-
-Route::get('/list_booking', function (){
-    dd('list_booking');
-})->name('list_booking');
+Route::get('/list_booking/{status}','BookingController@listBooking')->name('list_booking');
 
 Route::post('/post_booking', 'BookingController@postBooking')->name('post_booking');
-
-
+Route::get('/view_detail_booking/{id}', 'BookingController@viewDetailBooking')->name('view_detail_booking');
+Route::get('/process_booking/{id}', 'BookingController@processBooking')->name('process_booking');
+Route::get('/reject_booking/{id}', 'BookingController@rejectBooking')->name('reject_booking');
 
 
 Auth::routes();
-
-Route::prefix('admin')->group(function () {
-    Route::get('home', 'HomeController@index')->name('home');
-
-});
 
