@@ -78,7 +78,7 @@
 
             <div class="form-group">
                 <?php
-                $arr=['Akses Internet WiFi','Air Conditioner (AC)','TV (flat screen)','Shower air hangat','Toilet duduk','Kamar mandi privat/dalam kamar'
+                $arr=['WiFi','Air Conditioner (AC)','TV (flat screen)','Shower','Toilets','private bathroom'
                 ]?>
                 <label for="exampleFormControlSelect1">Facilities</label>
                 @foreach($arr as $key =>  $row)

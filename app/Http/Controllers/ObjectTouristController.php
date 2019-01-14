@@ -13,6 +13,7 @@ class ObjectTouristController extends Controller
     //
 
     public function index (Request $request){
+        initialDb();
         $list['list'] = TouristObject::with(['gallery','category'])->get()->toArray();
         foreach ($list['list'] as $keys =>  $rows){
             foreach ($rows['gallery'] as $row){

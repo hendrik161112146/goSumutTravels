@@ -11,7 +11,7 @@
                     we choose the best hotels and resorts based on the rating we receive from every traveler who uses our website before, in order to maintain quality, please help us give a rating if you are satisfied with the service received
                 </p>
                 <a href="{{route('hotel_list')}}">
-                    <button class="btn btn-black">Make Reservation</button>
+                    <button class="btn btn-black">See Other Hotels</button>
                 </a>
             </div>
             <div class="col-lg-6 col-md-12 about-right no-padding">

@@ -59,7 +59,7 @@ class BookingController extends Controller
             }
         }else{
             Booking::create($request->toArray());
-            return redirect()->back()->with('success', 'Your request is being processed, we will send a response to your email');  ;
+            return redirect()->back()->with('success', 'Your request is being processed, we will email you, for more informations ');  ;
 
         }
 

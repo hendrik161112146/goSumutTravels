@@ -65,7 +65,7 @@
         initialPreviewConfig: [
             @foreach ($images as $rows)
             {
-                caption: '{{$rows['image_path']}}',
+                caption: '{{$rows['id']}}',
                 width: '120px',
                 url: '{{@$_GET['status'] == 'object' ? route('delete_upload_image_tourist',['id' => $rows['id'],'_token' => csrf_token(),'status' => 'object'])
                     :

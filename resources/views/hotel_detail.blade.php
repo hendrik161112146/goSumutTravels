@@ -38,11 +38,11 @@
                         @foreach($hotel_data['image_link'] as $key => $row)
                             @if($key == 0)
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" style="min-height: 500px;" src="{{$row}}" alt="First slide">
+                                    <img class="d-block w-100" style="height: 400px;" src="{{$row}}" alt="First slide">
                                 </div>
                             @else
                                 <div class="carousel-item">
-                                    <img class="d-block w-100"  style="min-height: 500px;" src="{{$row}}" alt="Second slide">
+                                    <img class="d-block w-100"  style="height: 400px;" src="{{$row}}" alt="Second slide">
                                 </div>
                             @endif
                         @endforeach
@@ -61,7 +61,7 @@
 
 
                 <!-- Post Content -->
-                <p class="lead" style="color: black;">{!!$hotel_data['meta_description']!!}</p>
+               {{-- <p class="lead" style="color: black;">{!!$hotel_data['meta_description']!!}</p>--}}
 
                 <p style="color: black;">{!!$hotel_data['meta_description']!!}</p>
 

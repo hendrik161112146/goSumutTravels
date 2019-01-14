@@ -5,6 +5,11 @@
 
     <div  class="row m-5">
         <div class="container" >
+            <div class="row d-flex justify-content-center m-5" style="height: 50px;">
+            <div class="col-md-6 pb-80 header-text">
+                <h1 style="text-align: center;">List Hotel</h1>
+            </div>
+        </div>
             @foreach($hotel as $rows)
                 <div class="row mt-2">
                     @foreach($rows as $row)

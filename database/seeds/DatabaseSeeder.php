@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             ]);
         }*/
 
-       /* $arr_faci=['Akses Internet WiFi','Air Conditioner (AC)','TV (flat screen)','Shower air hangat','Toilet duduk','Kamar mandi privat/dalam kamar'
+       /*  $arr=['Akses Internet WiFi','Air Conditioner (AC)','TV (flat screen)','Shower','Toilets','private bathroom'
         ];
 
         for($i=0; $i<=100; $i++) {
